@@ -11,24 +11,5 @@
             Password: <input type="post" name="password" value=""/> <br/> <br/>
             <input type="submit" name="btn" value="Đang Nhập"/>
         </form>
-        <?php 
-       if ($_POST['btn'])
-        {
-            // B1: Lấy thông tin
-            $username = isset($_POST['username']) ? $_POST['username'] : '';
-            $password = isset($_POST['password']) ? $_POST['password'] : '';
-             
-            // B2: Kiểm tra dữ liệu
-            if (!$password || !$username){
-                echo 'Bạn chưa nhập đủ thông tin';
-            }
-            else if ($password != 'thehalfheart' || $username != 'freetuts.net'){
-                echo 'Thông tin đăng nhập bị sai';
-            }
-            else{
-                echo 'Đăng nhập thành công!';
-            }
-        }
-        ?>
     </body>
 </html>
