@@ -6,14 +6,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <<form method="post" action="post.php">
+        <form method="post" action="post.php">
             Username: <input type="text" name="username" value=""/> <br/> <br/>
             Password: <input type="post" name="password" value=""/> <br/> <br/>
             <input type="submit" name="btn" value="Đang Nhập"/>
         </form>
         <?php 
-        var_dump($_POST);
+       if ($_POST['btn'])
+        {
+            // B1: Lấy thông tin
+            $username = isset($_POST['username']) ? $_POST['username'] : '';
+            $password = isset($_POST['password']) ? $_POST['password'] : '';
+             
+            // B2: Kiểm tra dữ liệu
+            if (!$password || !$username){
+                echo 'Bạn chưa nhập đủ thông tin';
+            }
+            else if ($password != 'thehalfheart' || $username != 'freetuts.net'){
+                echo 'Thông tin đăng nhập bị sai';
+            }
+            else{
+                echo 'Đăng nhập thành công!';
+            }
+        }
         ?>
-        </form>
     </body>
 </html>
