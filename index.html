@@ -1,15 +1,54 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <title>Login</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <form method="post" action="index.html">
-            Username: <input type="text" name="Username" value=""/> <br/> <br/>
-            Password: <input type="post" name="Password" value=""/> <br/> <br/>
-            <input type="submit" name="btn" value="Login"/>
-        </form>
-    </body>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="author" content="TEAM ViRiLiTY">
+<title>Dang nhap bang Javascript</title>
+<script type="text/javascript">
+function login()
+{
+//day la lenh dung de lay du lieu tu 2 form nhap user va password
+//gan 2 gia tri do cho 2 bien user,password
+user=document.dulieu.ten.value;
+password=document.dulieu.matkhau.value;
+//kiem tra neu dung thi cho chay trang web can vao
+if(user=="admin" && password=="admin")
+{
+//day la ham chuyen den trang web can xem
+window.location="http://practicetest.azurewebsites.net/";
+}
+
+else
+{
+//neu ko dung thi bao ko thanh cong
+alert("that bai");
+}
+return false;
+}
+</script>
+</head>
+
+
+
+<body>
+
+<form onsubmit="return login();" method="POST" enctype="text/plain" name="dulieu">
+
+<p>
+
+<label>User :</label><input type="text" name="ten" /></p>
+
+<p>
+
+<label>Password :</label><input type="password" name="matkhau" /></p>
+
+<input type="submit" value="Login" name="Login" />
+
+</form>
+
+
+
+
+
+</body>
+
 </html>
